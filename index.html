@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SF Gamer - Products</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e7fff0;
+  color: #222;
+}
+
+.app {
+  max-width: 600px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 18px 14px 100px;
+  background: linear-gradient(#00c853, #00a94f);
+}
+
+.header {
+  text-align: center;
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  margin: 8px 0 25px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border: 2px solid #65e89b;
+  border-radius: 22px;
+  margin-bottom: 25px;
+}
+
+.tab {
+  flex: 1;
+  padding: 17px 5px;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.tab.active {
+  background: #00b957;
+  box-shadow: 0 2px 10px #007e39;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 5px;
+  background: linear-gradient(135deg, #fff, #dff9ed);
+  border: 3px solid white;
+  border-radius: 25px;
+  padding: 22px 14px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 7px 15px #007c3840;
+}
+
+.days {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  padding: 13px 16px;
+  background: #087bff;
+  color: white;
+  border-radius: 0 20px 0 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  font-size: 75px;
+}
+
+.details {
+  padding-top: 18px;
+}
+
+.details h2 {
+  margin: 0 0 25px;
+  font-size: 23px;
+}
+
+.income-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.income {
+  color: #08b65a;
+  font-size: clamp(17px, 4.5vw, 26px);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.label {
+  color: #777;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.bottom-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.price {
+  color: #853cf4;
+  font-size: clamp(19px, 4.8vw, 25px);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.invest {
+  border: 0;
+  background: linear-gradient(135deg, #a15aff, #7130e8);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 35px;
+  padding: 15px 24px;
+  cursor: pointer;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-radius: 22px 22px 0 0;
+  padding: 17px 5px 12px;
+  box-shadow: 0 -5px 20px #00000012;
+}
+
+.nav button {
+  border: 0;
+  background: white;
+  color: #999;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav .selected {
+  color: #00a94f;
+}
+
+.nav-icon {
+  display: block;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 18px 9px 14px;
+  }
+
+  .product-image {
+    font-size: 57px;
+  }
+
+  .invest {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <div class="header">Products</div>
+
+  <div class="tabs">
+    <button class="tab" onclick="changeTab(this)">
+      ☆ Daily Plan
+    </button>
+
+    <button class="tab active" onclick="changeTab(this)">
+      ☻ Welfare Plan
+    </button>
+  </div>
+
+  <!-- VIP A -->
+  <div class="card">
+    <div class="days">Days: 5</div>
+
+    <div class="product-image">📱</div>
+
+    <div class="details">
+      <h2>VIP A</h2>
+
+      <div class="income-row">
+        <div>
+          <div class="income">₹1,780</div>
+          <div class="label">Daily Income</div>
+        </div>
+
+        <div>
+          <div class="income">₹7,120</div>
+          <div class="label">Total Income</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="price">Price: ₹650</div>
+      <button class="invest" onclick="invest('VIP A',650)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+  <!-- VIP B -->
+  <div class="card">
+    <div class="days">Days: 7</div>
+
+    <div class="product-image">📶</div>
+
+    <div class="details">
+      <h2>VIP B</h2>
+
+      <div class="income-row">
+        <div>
+          <div class="income">₹2,560</div>
+          <div class="label">Daily Income</div>
+        </div>
+
+        <div>
+          <div class="income">₹7,680</div>
+          <div class="label">Total Income</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="price">Price: ₹1,000</div>
+      <button class="invest" onclick="invest('VIP B',1000)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+  <!-- VIP C -->
+  <div class="card">
+    <div class="days">Days: 10</div>
+
+    <div class="product-image">🗼</div>
+
+    <div class="details">
+      <h2>VIP C</h2>
+
+      <div class="income-row">
+        <div>
+          <div class="income">₹5,600</div>
+          <div class="label">Daily Income</div>
+        </div>
+
+        <div>
+          <div class="income">₹11,200</div>
+          <div class="label">Total Income</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-row">
+      <div class="price">Price: ₹2,500</div>
+      <button class="invest" onclick="invest('VIP C',2500)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Navigation -->
+<div class="nav">
+
+  <button onclick="navigate('Home')">
+    <span class="nav-icon">⌂</span>
+    Home
+  </button>
+
+  <button class="selected" onclick="navigate('Products')">
+    <span class="nav-icon">◆</span>
+    Products
+  </button>
+
+  <button onclick="navigate('Promotion')">
+    <span class="nav-icon">♧</span>
+    Promotion
+  </button>
+
+  <button onclick="navigate('Mine')">
+    <span class="nav-icon">◉</span>
+    Mine
+  </button>
+
+</div>
+
+<script>
+function changeTab(button) {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  button.classList.add('active');
+
+  alert(button.textContent.trim() +
+        ' selected. This is a demo page.');
+}
+
+function invest(plan, price) {
+  alert(
+    plan + '\n' +
+    'Price: ₹' + price + '\n\n' +
+    'This is a demo. No payment has been made.'
+  );
+}
+
+function navigate(page) {
+  if (page !== 'Products') {
+    alert(page + ' page is not connected yet.');
+  }
+}
+</script>
+
+</body>
+</html>
