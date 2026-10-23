@@ -348,11 +348,12 @@ function changeTab(button) {
 }
 
 function invest(plan, price) {
-  alert(
-    plan + '\n' +
-    'Price: ₹' + price + '\n\n' +
-    'This is a demo. No payment has been made.'
-  );
+  if (plan === 'VIP A' && price === 650) {
+    window.location.href =
+      'https://razorpay.me/@sarfarajansari3473?amount=AbrAZZu%2Ffs1C7OoCxDm7hw%3D%3D';
+  } else {
+    alert('Payment link is not available for this plan.');
+  }
 }
 
 function navigate(page) {
