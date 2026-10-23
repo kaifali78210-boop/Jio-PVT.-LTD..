@@ -209,7 +209,163 @@ body {
     <button class="tab" onclick="changeTab(this)">
       ☆ Daily Plan
     </button>
+<style>
+.daily-jio {
+  background: linear-gradient(135deg, #b8860b, #ffcc00, #d99a00);
+  padding: 15px;
+  border-radius: 18px;
+}
 
+.daily-jio .jio-card {
+  background: #fffdf2;
+  border-radius: 18px;
+  padding: 18px 14px;
+  margin: 16px 0;
+  color: #222;
+  box-shadow: 0 4px 12px #72500055;
+}
+
+.daily-jio .jio-days {
+  background: #0877f9;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 0 14px 0 14px;
+  float: right;
+  font-weight: bold;
+}
+
+.daily-jio .jio-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+.daily-jio .jio-income {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.daily-jio .jio-income div {
+  color: #079b50;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.daily-jio .jio-label {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.daily-jio .jio-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.daily-jio .jio-price {
+  color: #772ce8;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.daily-jio .jio-btn {
+  background: linear-gradient(135deg, #a34bff, #7025db);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 15px;
+}
+</style>
+
+<div class="daily-jio">
+
+  <!-- Jio SIM Pack -->
+  <div class="jio-card">
+    <div class="jio-days">Days: 2</div>
+    <div style="clear:both"></div>
+    <div class="jio-name">📱 Jio SIM Pack</div>
+    <div class="jio-income">
+      <div>₹2,850<span class="jio-label">Daily Income</span></div>
+      <div>₹5,700<span class="jio-label">Total Income</span></div>
+    </div>
+    <div class="jio-bottom">
+      <div class="jio-price">Price: ₹700</div>
+      <button class="jio-btn" onclick="jioInvest('Jio SIM Pack',700)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+  <!-- Jio Wi-Fi Router -->
+  <div class="jio-card">
+    <div class="jio-days">Days: 50</div>
+    <div style="clear:both"></div>
+    <div class="jio-name">📶 Jio Wi-Fi Router</div>
+    <div class="jio-income">
+      <div>₹270<span class="jio-label">Daily Income</span></div>
+      <div>₹13,500<span class="jio-label">Total Income</span></div>
+    </div>
+    <div class="jio-bottom">
+      <div class="jio-price">Price: ₹290</div>
+      <button class="jio-btn" onclick="jioInvest('Jio Wi-Fi Router',290)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+  <!-- Jio Smartphone -->
+  <div class="jio-card">
+    <div class="jio-days">Days: 45</div>
+    <div style="clear:both"></div>
+    <div class="jio-name">📱 Jio Smartphone</div>
+    <div class="jio-income">
+      <div>₹445<span class="jio-label">Daily Income</span></div>
+      <div>₹20,025<span class="jio-label">Total Income</span></div>
+    </div>
+    <div class="jio-bottom">
+      <div class="jio-price">Price: ₹650</div>
+      <button class="jio-btn" onclick="jioInvest('Jio Smartphone',650)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+  <!-- Jio Fiber Connection -->
+  <div class="jio-card">
+    <div class="jio-days">Days: 36</div>
+    <div style="clear:both"></div>
+    <div class="jio-name">📡 Jio Fiber Connection</div>
+    <div class="jio-income">
+      <div>₹520<span class="jio-label">Daily Income</span></div>
+      <div>₹18,720<span class="jio-label">Total Income</span></div>
+    </div>
+    <div class="jio-bottom">
+      <div class="jio-price">Price: ₹650</div>
+      <button class="jio-btn" onclick="jioInvest('Jio Fiber Connection',650)">
+        Invest
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function jioInvest(product, price) {
+  alert(
+    product +
+    "\nPrice: ₹" + price +
+    "\n\nDemo only. No payment has been made."
+  );
+}
+</script>
     <button class="tab active" onclick="changeTab(this)">
       ☻ Welfare Plan
     </button>
